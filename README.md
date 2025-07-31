@@ -20,7 +20,7 @@ venv\Scripts\activate
 
 2. **Install dependencies:**
 ```cmd
-pip install spotipy yt-dlp python-dotenv tqdm argparse
+pip install -r requirements.txt
 ```
 
 3. **Install FFmpeg:**
@@ -37,7 +37,7 @@ source venv/bin/activate
 
 2. **Install dependencies:**
 ```bash
-pip install spotipy yt-dlp python-dotenv tqdm argparse
+pip install -r requirements.txt
 ```
 
 3. **Install FFmpeg:**
@@ -145,4 +145,23 @@ python main.py 37i9dQZF1DXcBWIGoYBM5M --download --format wav --output ./music/w
 
 **"Missing Spotify credentials" error:**
 - Ensure your `.env` file exists and contains valid credentials
-- Check that there are no extra spaces in your
+- Check that there are no extra spaces in your `.env` file
+
+**"Could not find playlist" error:**
+- Verify the playlist ID is correct
+- Ensure the playlist is public (private playlists require additional permissions)
+
+**FFmpeg errors:**
+- Make sure FFmpeg is properly installed and in your system PATH
+- Try reinstalling FFmpeg
+
+**Download failures:**
+- Some songs may not be available on YouTube
+- Try running with `--verbose` to see detailed error messages
+
+## Notes
+
+- The tool searches YouTube for audio matches automatically
+- Downloaded files are named as "Song Name - Artist.format"
+- Only public Spotify playlists are supported by default
+- Audio quality is set to 192 kbps for MP3 files
